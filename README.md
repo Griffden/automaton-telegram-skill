@@ -98,6 +98,47 @@ You should see:
 [Bridge] Waiting for Telegram messages...
 ```
 
+---
+
+## Important: Model Compatibility
+
+Not all models available on Conway work correctly with the Telegram bridge. During testing, only **`gpt-5.2`** was found to reliably respond conversationally to Telegram messages. Other models either returned 502/503 errors or responded with internal strategy reports instead of direct replies.
+
+### How to set your model to gpt-5.2
+
+Open your Automaton config:
+```bash
+nano ~/.automaton/automaton.json
+```
+
+Find this line:
+```
+"inferenceModel": "gpt-4o",
+```
+
+Change it to:
+```
+"inferenceModel": "gpt-5.2",
+```
+
+Save with **Ctrl + X**, **Y**, **Enter**, then restart your Automaton.
+
+---
+
+## Tip: Getting Your Agent to Respond Conversationally
+
+By default your agent may reply with internal strategy reports and action plans instead of talking to you directly. To fix this, open your Automaton config:
+```bash
+nano ~/.automaton/automaton.json
+```
+
+Add this line after `"registeredWithConway": true,`:
+```
+"creatorMessage": "When you receive a message from your Creator via Telegram, respond conversationally in plain sentences like a text message. No bullet points, no action plans, no status reports. Just reply directly to what they said.",
+```
+
+Save, restart your Automaton, and it should respond naturally from that point on.
+
 ### Step 6 — Test it
 
 Open Telegram, find your bot by its username, press **Start**, and send it a message. Your Automaton will reply once it processes its inbox.
