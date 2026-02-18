@@ -1,4 +1,4 @@
-# Automaton Telegram Skill
+# Automaton Telegram Bridge
 
 A Telegram bridge for [Conway Automaton](https://github.com/Conway-Research/automaton) — chat with your agent directly via Telegram when the web app is unavailable, or simply when you want to stay in touch with your agent on the go.
 
