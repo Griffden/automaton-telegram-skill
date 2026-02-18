@@ -52,6 +52,10 @@ No modifications to the Automaton's core code are required.
 Open your Automaton's environment file:
 ```bash
 nano ~/.automaton/.env
+> **Note:** This file does not exist by default — running the command above will create it automatically if it doesn't exist yet. If you previously created it at `~/automaton/.env` by mistake, copy it to the right place with:
+> ```
+> cp ~/automaton/.env ~/.automaton/.env
+> ```
 ```
 
 Add these two lines, replacing the example values with your real ones:
